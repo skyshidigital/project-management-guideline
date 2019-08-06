@@ -17,11 +17,13 @@
       - [Tahap Inisiasi](#tahap-inisiasi)
       - [Tahap Development](#tahap-development)
       - [Tahap Deployment](#tahap-deployment)
+        - [Pedoman Kebutuhan Kelengkapan Dokumen Pada Tahap Inisiasi](#pedoman-kebutuhan-kelengkapan-dokumen-pada-tahap-inisiasi)
     - [Pedoman Request Improvement dan Bug di Live Site](#pedoman-request-improvement-dan-bug-di-live-site)
     - [Pedoman Request Improvement di Ongoing Project](#pedoman-request-improvement-di-ongoing-project)
     - [Pedoman Melakukan Report Project](#pedoman-melakukan-report-project)
     - [Pedoman Menerima laporan bug dari client](#pedoman-menerima-laporan-bug-dari-client)
-    
+    - [Pedoman Penambahan Sukses dan Failes Test Case pada Dokumen UAT](#pedoman-penambahan-suksess-dan-failed-test-case-pada-dokumen-uat)
+    - [Pedoman Melakukan Report Project](#pedoman-melakukan-report-project)
 ## Introduction
 **Skyshi Procedure Documentation** yaitu standar dokumentasi untuk setiap divisi dalam mengelola pekerjaan yang akan memudahkan proses birokrasi dalam mengerjakan task yang diberikan, diharapkan dengan menggunakan dokumen ini pekerjaan antara divisi akan lebih mudah dan efisien.
 
@@ -130,7 +132,7 @@ Setiap project diwajibkan mengikuti prosedur berikut untuk memastikan bahwa kual
     -	UAT dokumen automated
     -	Git repository
 
-#### Tahap Deployment	
+### Tahap Deployment	
 -	Ketika sebuah aplikasi telah dinyatakan lolos testing, dan sudah memenuhi aspek QA dari internal maupun dari sisi klien, maka dilanjutkan ke proses deployment ke live server maupun ke play store/app store.
 -	Arsitektur:
     -	UAT : backend dengan latest code, database replika live terbaru
@@ -156,6 +158,16 @@ Setiap project diwajibkan mengikuti prosedur berikut untuk memastikan bahwa kual
     -	Dokumen Deployment Mobile
     -	Dokumen Serah Terima Aplikasi
     -	Dokumen Migration Plan (Jika business process berbeda, maka Backend atau Frontend wajib membuat dokumen planning migrasi dari yang lama ke yang baru. Wajib ada estimasi down time)
+    
+    #### Pedoman Kebutuhan Kelengkapan Dokumen Pada Tahap Inisiasi
+    - Pada awal project, pada tahap inisiasi terdapat dokumen Deployment, Sebaiknya PM dan Lead engineer harus mendefinisikan scope production dengan eksplisit dan dokumen ini diisi klien dari awal tahap inisiasi atau tahap sprint, contoh :
+        - Domain yang digunakan
+        - Alamat server IP yang digunakan
+        - Facebook / Google key production yang digunakan
+        - Google playstore yang digunakan
+        - IOS appstore yang digunakan
+    - Pada tahap akhir project ketika tahap Deployment, PM dan Lead Engineer melakukan Deploy sesuai dengan dokumen yang sudah disiapkan diawal tahap inisiasi
+    - PM harus aktif mengingatkan klien untuk segera mempersiapkan dokumen pada tahap inisiasi
 
 ### Pedoman Request Improvement dan Bug di Live Site	
 1.	Project manager menerima laporan request bug dan improvement dari client
@@ -210,4 +222,9 @@ Setiap project diwajibkan mengikuti prosedur berikut untuk memastikan bahwa kual
 - PM wajib menyediakan data impact user serta prosentase user yang mendapatkan impact di bug yang dapat didapatkan dari firebase atau GA.
 - Prioritas diatur berdasarkan berdasrkan impact tersebut.
 - Informasi mengenai impact dijelaskan kepada client agar dapat diatur priority nya kapan akan diupdate.
+
+### Pedoman Penambahan Sukses dan Failes Test Case pada Dokumen UAT
+- Dokumen UAT harus menyantumkan kondisi sukses dan expected gagal
+- UAT gagal bisa dikarenakan sesuai bisnis proses, contoh : gagal validasi pada email, format tidak sesuai, email sudah ada dll
+- UAT gagal dapat juga dikarenakan faktor teknis, contoh : internet timeout, tidak ada koneksi internet, produk tidak ditemukan, halman tidak ditemukan, role permission tidak cukup
 
